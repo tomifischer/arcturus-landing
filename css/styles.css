@@ -1,12 +1,35 @@
+html {
+  /*min-height: 100vh;*/
+  height: 100%;
+  /* debug */
+  background-color: coral;
+}
+
 body {
+  height: 100%;
   background-color: #202020;
   color: white;
+  /* avoid the margin appearing on margin-collapse. */
+  margin: 0px;
+  /*  */
+  display: flex;
+  flex-direction: column;
   /* debug */
   /*border: 1px solid red;*/
 }
 
+#content {
+  /* stretch content vertically as much as possible. */
+  flex: 1;
+  /* debug */
+  /*border: 1px solid yellow;*/
+}
+
 #banner {
-  position: fixed;
+  /* shrink the div to fit content */
+  display:inline-block;
+  /* center element inside container (could use flex as well) */
+  position: relative;
   /* This will position the top left corner at the center of the page */
   top: 50%;
   left: 50%;
@@ -24,9 +47,12 @@ body {
 
 #logo {
   font-size: 150px;
-  flex: 1;
   padding: 10px;
-  margin: auto;
+  /* Declare a flex container to easily center content inside it. */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
   /* debug */
   /*border: 2px solid red;*/
 }
@@ -41,10 +67,6 @@ body {
 }
 
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
   padding-bottom: 100px;
   font-size: 22px;
   /* debug */
